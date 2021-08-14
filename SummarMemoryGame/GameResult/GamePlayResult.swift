@@ -10,30 +10,37 @@ import SwiftUI
 struct GamePlayResult: View {
     @State private var isShowing = false
     var body: some View {
-        VStack(spacing:20){
-            Text("Nanakoさん\n勝利！").font(.system(size: 50, weight:.bold, design:.default))
-                .padding(.vertical,130)
-                .multilineTextAlignment(.center)
-            
-            Button("罰ゲーム"){
-                isShowing = true
-            }.sheet(isPresented: $isShowing, content: {
-                ModalView()
-            })
-            .frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .accentColor(.white)
-            .background(Color.blue)
-            .cornerRadius(26)
-            .padding()
-            
-            
-            Button("スタート画面に戻る"){
+        
+        ZStack{
+            NavigationView{
+                VStack(spacing:20){
+                    Text("Nanakoさん\n勝利！").font(.system(size: 50, weight:.bold, design:.default))
+                        .padding(.vertical,50)
+                        .multilineTextAlignment(.center).opacity(1)
+                    
+                    Button("罰ゲーム"){
+                        isShowing = true
+                    }.sheet(isPresented: $isShowing, content: {
+                        ModalView()
+                    })
+                    .frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .accentColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(26)
+                    .padding()
+                    .opacity(1)
+                    
+                    NavigationLink(destination: TopView()) {
+                        Text("スタート画面に戻る").frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .accentColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(26)
+                            .padding()
+                    }
+                    
+                    Spacer().frame(height: 50)
+                }
             }
-            .frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .accentColor(.white)
-            .background(Color.blue)
-            .cornerRadius(26)
-            .padding()
         }
     }
 }
