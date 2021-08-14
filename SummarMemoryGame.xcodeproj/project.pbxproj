@@ -16,6 +16,7 @@
 		D42F836126C78A6D00F8BF20 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F836026C78A6D00F8BF20 /* TopView.swift */; };
 		D42F836926C78A7A00F8BF20 /* FlyerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F836826C78A7A00F8BF20 /* FlyerListView.swift */; };
 		D42F836E26C78A8400F8BF20 /* GamePlayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F836D26C78A8400F8BF20 /* GamePlayResult.swift */; };
+		D42F837A26C7BAEA00F8BF20 /* FlyerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D42F836026C78A6D00F8BF20 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		D42F836826C78A7A00F8BF20 /* FlyerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerListView.swift; sourceTree = "<group>"; };
 		D42F836D26C78A8400F8BF20 /* GamePlayResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayResult.swift; sourceTree = "<group>"; };
+		D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		D42F835E26C78A3C00F8BF20 /* GamePlay */ = {
 			isa = PBXGroup;
 			children = (
+				D42F837826C7BAD900F8BF20 /* ViewModel */,
 				D42F836826C78A7A00F8BF20 /* FlyerListView.swift */,
 			);
 			path = GamePlay;
@@ -161,6 +164,14 @@
 				D42F836D26C78A8400F8BF20 /* GamePlayResult.swift */,
 			);
 			path = GameResult;
+			sourceTree = "<group>";
+		};
+		D42F837826C7BAD900F8BF20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				D42F836E26C78A8400F8BF20 /* GamePlayResult.swift in Sources */,
 				D42F832A26C77EC700F8BF20 /* SummarMemoryGameApp.swift in Sources */,
 				D42F836926C78A7A00F8BF20 /* FlyerListView.swift in Sources */,
+				D42F837A26C7BAEA00F8BF20 /* FlyerListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
