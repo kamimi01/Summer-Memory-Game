@@ -37,6 +37,8 @@ struct TopView: View {
                                 .foregroundColor(Color.white)
                                 .clipShape(RoundedRectangle(cornerRadius: 30))
                     }
+                    .navigationBarHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
                     
                     Spacer()
                         .frame(height: 15)
