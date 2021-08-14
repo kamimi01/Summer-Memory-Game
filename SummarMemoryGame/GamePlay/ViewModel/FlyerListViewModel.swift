@@ -51,11 +51,10 @@ class FlyerListViewModel: ObservableObject {
         
         // 同じ値を倍に増やしてimageListの配列に入れる
         imageList.append(contentsOf: randomImageList)
+        imageList.append(contentsOf: randomImageList)
         
         // 再度シャッフルする
-        randomImageList = allImageList.shuffled().prefix(12)
-        
-        imageList.append(contentsOf: randomImageList)
+        imageList = imageList.shuffled().prefix(24).reversed().reversed()
     }
     
     func updateImageList(selectedIndex: Int, selectedImage: String) {

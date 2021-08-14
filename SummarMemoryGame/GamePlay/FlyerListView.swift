@@ -35,11 +35,9 @@ struct FlyerListView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
-                .frame(height: 10)
+                .frame(height: 5)
             
             flyerList
-            
-            Spacer()
             
             pointResult(isSecondTurn: viewModel.isSecondTurn, pointForFirstPerson: viewModel.pointForFirst, pointForSecondPerson: viewModel.pointForSecond)
         }
@@ -55,6 +53,8 @@ extension FlyerListView {
                                isActive: $viewModel.isGameOver) {
                     EmptyView()
                 }
+                .navigationBarHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
                 
                 
                 ScrollView {
@@ -123,7 +123,7 @@ extension FlyerListView {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(isSecondTurn ? Color.red : Color.white)
-                .frame(width: screen.width * 0.3, height: screen.height * 0.05)
+                .frame(width: screen.width * 0.25, height: screen.height * 0.03)
             
             Spacer()
                 .frame(height: 5)
