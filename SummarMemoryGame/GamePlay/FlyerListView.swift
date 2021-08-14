@@ -122,7 +122,7 @@ extension FlyerListView {
             Image(systemName: "person.fill")
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(Color.red)
+                .foregroundColor(isSecondTurn ? Color.red : Color.white)
                 .frame(width: screen.width * 0.3, height: screen.height * 0.05)
             
             Spacer()
@@ -132,7 +132,7 @@ extension FlyerListView {
                 .font(.title)
         }
         .frame(width: screen.width * 0.4, height: screen.height * 0.1)
-        .background(isSecondTurn ? Color.clear : Color.blue)
+        .background(isSecondTurn ? Color.clear : Color.red)
     }
 }
 

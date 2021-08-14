@@ -39,6 +39,7 @@ struct GamePlayResult: View {
                     isShowing = true
                 }.sheet(isPresented: $isShowing, content: {
                     ModalView()
+                        .ignoresSafeArea()
                 })
                 .frame(width: 250, height: 60, alignment: .center)
                 .accentColor(.white)
@@ -60,6 +61,8 @@ struct GamePlayResult: View {
             
             
         }
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -74,5 +77,6 @@ struct ModalView: View {
         let randomInt = Int.random(in: 1..<3)
         let imageName = "horror"+String(randomInt)
         Image(imageName).resizable()
+            .scaledToFill()
     }
 }

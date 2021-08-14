@@ -35,6 +35,14 @@ class FlyerListViewModel: ObservableObject {
     
     init() {
         createRandomOrder()
+//        createNotRandomOrder() // デバッグ用メソッド
+    }
+    
+    private func createNotRandomOrder() {
+        let randomImageList = allImageList.shuffled().prefix(12)
+        
+        imageList.append(contentsOf: randomImageList)
+        imageList.append(contentsOf: randomImageList)
     }
     
     private func createRandomOrder() {
@@ -66,13 +74,6 @@ class FlyerListViewModel: ObservableObject {
 
             // 同じカードだった場合
             if selectedImageList[0] == selectedImageList[1] {
-                for _ in imageList {
-                    if let selectedIndexFor2 = imageList.index(where: {$0 == selectedImageList[0]}) {
-                        imageList[selectedIndexFor2] = ""
-                    }
-                }
-                
-                print("画像のリスト：\(imageList)")
                 alertText = "同じチラシです！"
                 
                 // 得点の増加
@@ -85,15 +86,27 @@ class FlyerListViewModel: ObservableObject {
                 // 異なるカードだった場合
                 alertText = "違うチラシです..."
             }
-            
-            // 選択されたカードのリストを空に戻す
-            selectedImageList = []
         }
 
         print("結果は：\(result)")
     }
     
     func switchTurn() {
+        if selectedImageList.count == 2 {
+            if selectedImageList[0] == selectedImageList[1] {
+                for _ in imageList {
+                    if let selectedIndexFor2 = imageList.index(where: {$0 == selectedImageList[0]}) {
+                        imageList[selectedIndexFor2] = ""
+                    }
+                }
+                
+                print("画像のリスト：\(imageList)")
+            }
+            
+            // 選択されたカードのリストを空に戻す
+            selectedImageList = []
+        }
+        
         // 選択状態をリセットする
         selectedImageList = []
 
