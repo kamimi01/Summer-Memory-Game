@@ -9,7 +9,53 @@ import SwiftUI
 
 struct TopView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Image("background")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+                .aspectRatio(contentMode: .fill)
+
+            VStack{
+                Spacer().frame(height: 300)
+
+                Text("チラシで神経衰弱")
+                    .bold()
+                    .font(.system(size: 38, weight: .black, design: .default))
+                
+                Spacer()
+                    .frame(height: 200)
+                
+                Button(action: {
+                    print("Start")
+                }){
+                    Text("スタート")
+                        .bold()
+                        .font(.title)
+                        .padding()
+                        .frame(width: 250, height: 80)
+                        .background(Color.pink)
+                        .foregroundColor(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                }
+                
+                Spacer()
+                    .frame(height: 15)
+                
+                Button(action: {
+                    print("Start")
+                }){
+                    Text("チラシコレクション")
+                        .bold()
+                        .font(.system(size: 23, weight: .black, design: .default))
+                        .padding()
+                        .frame(width: 250, height: 80)
+                        .background(Color.blue)
+                        .foregroundColor(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+
+                }
+            }
+        }
     }
 }
 
