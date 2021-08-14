@@ -51,7 +51,7 @@ extension FlyerListView {
         
         NavigationView {
             VStack {
-                NavigationLink(destination: GamePlayResult(),
+                NavigationLink(destination: GamePlayResult(gameResult: $viewModel.winner),
                                isActive: $viewModel.isGameOver) {
                     EmptyView()
                 }
