@@ -35,7 +35,8 @@ struct GamePlayResult: View {
                             .accentColor(.white)
                             .background(Color.blue)
                             .cornerRadius(26)
-                            .padding()
+                            .padding().navigationBarTitle("")
+                            .navigationBarHidden(true)
                     }
                     
                     Spacer().frame(height: 50)
