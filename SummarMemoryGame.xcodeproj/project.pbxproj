@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012AA7E626C7B8F3007AA7ED /* TopViewCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012AA7E526C7B8F3007AA7ED /* TopViewCollection.swift */; };
 		D42F832A26C77EC700F8BF20 /* SummarMemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F832926C77EC700F8BF20 /* SummarMemoryGameApp.swift */; };
 		D42F832C26C77EC700F8BF20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F832B26C77EC700F8BF20 /* ContentView.swift */; };
 		D42F832E26C77EC900F8BF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42F832D26C77EC900F8BF20 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012AA7E526C7B8F3007AA7ED /* TopViewCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCollection.swift; sourceTree = "<group>"; };
 		D42F832626C77EC700F8BF20 /* SummarMemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummarMemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42F832926C77EC700F8BF20 /* SummarMemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarMemoryGameApp.swift; sourceTree = "<group>"; };
 		D42F832B26C77EC700F8BF20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				D42F836026C78A6D00F8BF20 /* TopView.swift */,
+				012AA7E526C7B8F3007AA7ED /* TopViewCollection.swift */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012AA7E626C7B8F3007AA7ED /* TopViewCollection.swift in Sources */,
 				D42F832C26C77EC700F8BF20 /* ContentView.swift in Sources */,
 				D42F836126C78A6D00F8BF20 /* TopView.swift in Sources */,
 				D42F836E26C78A8400F8BF20 /* GamePlayResult.swift in Sources */,
