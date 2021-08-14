@@ -27,7 +27,7 @@ struct TopView: View {
                         .frame(height: 200)
                     
                     NavigationLink(
-                        destination: TopViewCollection()){
+                        destination: FlyerListView()){
                             Text("スタート")
                                 .bold()
                                 .font(.title)
