@@ -23,7 +23,7 @@ struct TopViewCollection: View {
                         .resizable()
                         .frame(width: 70, height: 100)
                 }.sheet(isPresented: $showingModal) {
-                    TopViewFlyer(flyer: flyer)
+                    TopViewFlyer(isActive: $showingModal, flyer: flyer)
                 }
             }
         }
@@ -32,10 +32,27 @@ struct TopViewCollection: View {
 }
 
 struct TopViewFlyer: View {
+    @Binding var isActive: Bool
     let flyer: String
     
     var body: some View {
-        Image(flyer)
+        VStack{
+            Button(action: {
+                self.isActive.toggle()
+            }) {
+                HStack{
+                    Text("Close")
+                    
+                    Spacer().frame(width: 300)
+                }
+            }
+            
+            Spacer().frame(height: 130)
+            
+            Image(flyer)
+            
+            Spacer().frame(height: 70)
+        }
     }
 }
 
