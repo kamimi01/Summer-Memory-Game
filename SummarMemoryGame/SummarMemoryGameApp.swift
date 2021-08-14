@@ -11,7 +11,7 @@ import SwiftUI
 struct SummarMemoryGameApp: App {
     var body: some Scene {
         WindowGroup {
-            GamePlayResult(gameResult: .constant(GameResult.even))
+            TopView()
         }
     }
 }
