@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct GamePlayResult: View {
     @State private var isShowing = false
     @Binding var gameResult: GameResult
+    
+    private let fearSound = try! AVAudioPlayer(data: NSDataAsset(name: "fear")!.data)
     
     var body: some View {
         
@@ -40,6 +43,9 @@ struct GamePlayResult: View {
                 }.sheet(isPresented: $isShowing, content: {
                     ModalView()
                         .ignoresSafeArea()
+                        .onAppear{
+                            fearSound.play()
+                        }
                 })
                 .frame(width: 250, height: 60, alignment: .center)
                 .accentColor(.white)
