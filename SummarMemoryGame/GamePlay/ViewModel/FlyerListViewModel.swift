@@ -9,9 +9,11 @@ import Foundation
 
 class FlyerListViewModel: ObservableObject {
     
-    @Published var imageList = ["flyer1", "flyer2", "flyer3", "flyer4", "flyer5",
+    private var allImageList = ["flyer1", "flyer2", "flyer3", "flyer4", "flyer5",
                                 "flyer6", "flyer7", "flyer8", "flyer9", "flyer10",
-                                "flyer11", "flyer12","flyer1", "flyer2", "flyer3", "flyer4", "flyer5", "flyer6", "flyer7", "flyer8", "flyer9", "flyer10", "flyer11", "flyer12"]
+                                "flyer11", "flyer12","flyer13", "flyer14", "flyer15", "flyer16", "flyer17", "flyer18", "flyer19", "flyey20", "flyer21", "flyer22", "flyer23", "flyer24"]
+    
+    @Published var imageList: [String] = []
     
     @Published var imageStatusList = Array(repeating: false, count: 24)
     
@@ -31,7 +33,22 @@ class FlyerListViewModel: ObservableObject {
     
     @Published var isGameOver = false
     
-    init() {}
+    init() {
+        createRandomOrder()
+    }
+    
+    private func createRandomOrder() {
+        // ランダムに12こ値を選択する
+        var randomImageList = allImageList.shuffled().prefix(12)
+        
+        // 同じ値を倍に増やしてimageListの配列に入れる
+        imageList.append(contentsOf: randomImageList)
+        
+        // 再度シャッフルする
+        randomImageList = allImageList.shuffled().prefix(12)
+        
+        imageList.append(contentsOf: randomImageList)
+    }
     
     func updateImageList(selectedIndex: Int, selectedImage: String) {
         imageStatusList[selectedIndex] = true
