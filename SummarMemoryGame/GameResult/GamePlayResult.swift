@@ -9,7 +9,29 @@ import SwiftUI
 
 struct GamePlayResult: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack(spacing:20){
+            Text("Nanakoさん\n勝利！").font(.system(size: 50, weight:.bold, design:.default))
+                .padding(.vertical,130)
+                .multilineTextAlignment(.center)
+            Button("罰ゲーム"){
+                
+            }
+            .frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .accentColor(.white)
+            .background(Color.blue)
+            .cornerRadius(26)
+            .padding()
+            
+            
+            Button("スタート画面に戻る"){
+                
+            }
+            .frame(width: 250, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .accentColor(.white)
+            .background(Color.blue)
+            .cornerRadius(26)
+            .padding()
+        }
     }
 }
 
