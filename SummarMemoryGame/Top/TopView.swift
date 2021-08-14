@@ -54,8 +54,8 @@ struct TopView: View {
                     }
                 }
             }
-            .navigationBarHidden(true)
-        }
+        }.navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

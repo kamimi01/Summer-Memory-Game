@@ -34,8 +34,8 @@ class FlyerListViewModel: ObservableObject {
     @Published var isGameOver = false
     
     init() {
-        createRandomOrder()
-//        createNotRandomOrder() // デバッグ用メソッド
+        //createRandomOrder()
+        createNotRandomOrder() // デバッグ用メソッド
     }
     
     private func createNotRandomOrder() {
