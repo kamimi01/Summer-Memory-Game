@@ -74,7 +74,7 @@ struct GamePlayResult_Previews: PreviewProvider {
 
 struct ModalView: View {
     var body: some View {
-        let randomInt = Int.random(in: 1..<3)
+        let randomInt = Int.random(in: 1..<4)
         let imageName = "horror"+String(randomInt)
         Image(imageName).resizable()
             .scaledToFill()
