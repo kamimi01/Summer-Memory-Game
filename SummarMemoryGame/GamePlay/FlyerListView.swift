@@ -70,7 +70,7 @@ extension FlyerListView {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 70, height: 100)
-                                        .border(Color.green)
+//                                        .border(Color.green)
                                 } else {
                                     // imageListが空の場合は、空の四角を表示する
                                     if viewModel.imageList[index].isEmpty {
@@ -82,7 +82,7 @@ extension FlyerListView {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 70, height: 100)
-                                            .border(Color.green)
+//                                            .border(Color.green)
                                     }
                                 }
                             }

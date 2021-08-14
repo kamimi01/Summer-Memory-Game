@@ -42,20 +42,6 @@ class FlyerListViewModel: ObservableObject {
         print("更新後のリスト2：\(selectedImageList)")
         
         if selectedImageList.count == 2 {
-//            // imageListの中身が全て空の場合は、ゲーム終了
-//            if (imageList.allSatisfy{ $0.isEmpty == true }) {
-//                isGameOver = true
-//
-//                if pointForFirst == pointForSecond {
-//                    winner = GameResult.even
-//                } else if pointForFirst < pointForSecond {
-//                    winner = GameResult.player2
-//                } else {
-//                    winner = GameResult.player1
-//                }
-//
-//                return
-//            }
             
             result = true
             // カードが同じかどうか
