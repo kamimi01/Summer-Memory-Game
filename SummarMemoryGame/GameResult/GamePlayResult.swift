@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GamePlayResult: View {
     @State private var isShowing = false
+    @Binding var gameResult: GameResult
+    
     var body: some View {
         
         NavigationView{
@@ -19,9 +21,19 @@ struct GamePlayResult: View {
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
                 
-                Text("先攻の方の\n勝利！").font(.system(size: 50, weight:.bold, design:.default))
-                    .frame(width: 300, height: 200, alignment: .center)
-                    .multilineTextAlignment(.center)
+                if gameResult==GameResult.player1{
+                    Text("先攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
+                        .frame(width: 400, height: 200, alignment: .center)
+                        .multilineTextAlignment(.center)
+                }else if gameResult==GameResult.player2{
+                    Text("後攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
+                        .frame(width: 400, height: 200, alignment: .center)
+                        .multilineTextAlignment(.center)
+                }else{
+                    Text("引き分け").font(.system(size: 50, weight:.bold, design:.default))
+                        .frame(width: 300, height: 200, alignment: .center)
+                        .multilineTextAlignment(.center)
+                }
                 
                 Button("罰ゲーム"){
                     isShowing = true
@@ -53,7 +65,7 @@ struct GamePlayResult: View {
 
 struct GamePlayResult_Previews: PreviewProvider {
     static var previews: some View {
-        GamePlayResult()
+        GamePlayResult(gameResult: .constant(GameResult.even))
     }
 }
 
