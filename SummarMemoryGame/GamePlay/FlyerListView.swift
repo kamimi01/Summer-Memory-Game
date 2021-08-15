@@ -47,60 +47,54 @@ struct FlyerListView: View {
 extension FlyerListView {
     private var flyerList: some View {
         
-        NavigationView {
-            VStack {
-                NavigationLink(destination: GamePlayResult(gameResult: $viewModel.winner),
-                               isActive: $viewModel.isGameOver) {
-                    EmptyView()
-                }
-                .navigationBarHidden(true)
-                .navigationBarTitleDisplayMode(.inline)
-                
-                
-                ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 4), spacing: 10) {
-                        ForEach(0..<viewModel.imageList.count, id: \.self) { index in
-                            
-                            Button(action: {
-                                viewModel.updateImageList(selectedIndex: index, selectedImage: viewModel.imageList[index])
-                                print(viewModel.imageList)
-                            }) {
-                                if viewModel.imageStatusList[index] {
-                                    Image(viewModel.imageList[index])
+        VStack {
+            
+            ScrollView {
+                LazyVGrid(columns: Array(repeating: GridItem(), count: 4), spacing: 10) {
+                    ForEach(0..<viewModel.imageList.count, id: \.self) { index in
+                        
+                        Button(action: {
+                            viewModel.updateImageList(selectedIndex: index, selectedImage: viewModel.imageList[index])
+                            print(viewModel.imageList)
+                        }) {
+                            if viewModel.imageStatusList[index] {
+                                Image(viewModel.imageList[index])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 70, height: 100)
+                                //                                        .border(Color.green)
+                            } else {
+                                // imageListが空の場合は、空の四角を表示する
+                                if viewModel.imageList[index].isEmpty {
+                                    Text("")
+                                        .frame(width: 70, height: 100)
+                                    //                                    .border(Color.pink)
+                                } else {
+                                    Image("reverse")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 70, height: 100)
-//                                        .border(Color.green)
-                                } else {
-                                    // imageListが空の場合は、空の四角を表示する
-                                    if viewModel.imageList[index].isEmpty {
-                                        Text("")
-                                            .frame(width: 70, height: 100)
-        //                                    .border(Color.pink)
-                                    } else {
-                                        Image("reverse")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 70, height: 100)
-                                            .border(Color.blue)
-                                    }
+                                        .border(Color.blue)
                                 }
                             }
-                            .disabled(viewModel.imageList[index].isEmpty)
                         }
+                        .disabled(viewModel.imageList[index].isEmpty)
                     }
                 }
-                .frame(width: screen.width * 0.9, height: screen.height * 0.8)
-                .alert(isPresented: $viewModel.result) {
-                    Alert(title: Text(viewModel.alertText),
-                          message: Text(""),
-                          dismissButton: .default(Text("OK"),
-                                                  action: {
-                                                    print("OKがタップされた")
-                                                    viewModel.switchTurn()
-                                                  })) // ボタンがタップされた時の処理
-                }
             }
+            .frame(width: screen.width * 0.9, height: screen.height * 0.8)
+            .alert(isPresented: $viewModel.result) {
+                Alert(title: Text(viewModel.alertText),
+                      message: Text(""),
+                      dismissButton: .default(Text("OK"),
+                                              action: {
+                                                print("OKがタップされた")
+                                                viewModel.switchTurn()
+                                              }))
+            }
+        }
+        .fullScreenCover(isPresented: $viewModel.isGameOver) {
+            GamePlayResult(gameResult: $viewModel.winner)
         }
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
