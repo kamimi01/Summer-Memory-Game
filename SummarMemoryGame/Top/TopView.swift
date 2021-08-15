@@ -12,16 +12,16 @@ struct TopView: View {
         NavigationView {
             
             ZStack{
-                Image("background")
+                Image("background2")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
                 VStack{
                     Spacer().frame(height: 300)
 
-                    Text("チラシで神経衰弱")
+/*                        Text("Memory Game")
                         .bold()
-                        .font(.system(size: 38, weight: .black, design: .default))
+                        .font(.custom("Times-Roman", size: 50))*/
                     
                     Spacer()
                         .frame(height: 200)
