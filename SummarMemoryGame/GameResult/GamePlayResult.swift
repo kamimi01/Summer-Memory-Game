@@ -17,58 +17,72 @@ struct GamePlayResult: View {
     var body: some View {
         
         NavigationView{
-            VStack(spacing:0){
-                
-                Image("background2")
+            ZStack{
+                Image("background")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
-                
-                if gameResult==GameResult.player1{
-                    Text("先攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
-                        .frame(width: 400, height: 200, alignment: .center)
-                        .multilineTextAlignment(.center)
-                }else if gameResult==GameResult.player2{
-                    Text("後攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
-                        .frame(width: 400, height: 200, alignment: .center)
-                        .multilineTextAlignment(.center)
-                }else{
-                    Text("引き分け").font(.system(size: 50, weight:.bold, design:.default))
-                        .frame(width: 300, height: 200, alignment: .center)
-                        .multilineTextAlignment(.center)
+                VStack{
+                    
+                    Spacer()
+                    
+                    if gameResult==GameResult.player1{
+                        Text("先攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
+                            .frame(width: 400, height: 200, alignment: .center)
+                            .multilineTextAlignment(.center)
+                    }else if gameResult==GameResult.player2{
+                        Text("後攻の勝利").font(.system(size: 50, weight:.bold, design:.default))
+                            .frame(width: 400, height: 200, alignment: .center)
+                            .multilineTextAlignment(.center)
+                    }else{
+                        Text("引き分け").font(.system(size: 50, weight:.bold, design:.default))
+                            .frame(width: 300, height: 200, alignment: .center)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    Button(action: {
+                        self.isShowing.toggle()
+                    }) {
+                        Text("罰ゲーム").bold()
+                            .font(.system(size: 23, weight: .black, design: .default))
+                            .padding()
+                            .frame(width: 250, height: 80)
+                            .background(Color.purple)
+                            .foregroundColor(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                    }.sheet(isPresented: $isShowing){
+                        ModalView()
+                            .ignoresSafeArea()
+                            .onAppear{
+                                fearSound.play()
+                            }
+                    }
+                    
+                    Spacer()
+                        .frame(height: 15)
+                    
+                    NavigationLink(destination: TopView()) {
+                        Text("スタートに戻る").bold()
+                            .font(.system(size: 23, weight: .black, design: .default))
+                            .padding()
+                            .frame(width: 250, height: 80)
+                            .background(Color.blue)
+                            .foregroundColor(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                    }
+                    
+                    Spacer().frame(height: 180)
+                    
                 }
                 
-                Button("罰ゲーム"){
-                    isShowing = true
-                }.sheet(isPresented: $isShowing, content: {
-                    ModalView()
-                        .ignoresSafeArea()
-                        .onAppear{
-                            fearSound.play()
-                        }
-                })
-                .frame(width: 250, height: 60, alignment: .center)
-                .accentColor(.white)
-                .background(Color.blue)
-                .cornerRadius(26)
-                .padding()
-                
-                NavigationLink(destination: TopView()) {
-                    Text("スタート画面に戻る").frame(width: 250, height: 60, alignment: .center)
-                        .accentColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(26)
-                        .padding()
-                }
-                
-                Spacer().frame(height: 180)
                 
             }
-            
-            
+            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
