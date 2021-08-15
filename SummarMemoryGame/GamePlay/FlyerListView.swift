@@ -33,13 +33,21 @@ struct FlyerListView: View {
     @ObservedObject var viewModel = FlyerListViewModel()
     
     var body: some View {
-        VStack(spacing: 0) {
-            Spacer()
-                .frame(height: 5)
+        
+        ZStack {
+            Image("background3")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+                .aspectRatio(contentMode: .fill)
             
-            flyerList
-            
-            pointResult(isSecondTurn: viewModel.isSecondTurn, pointForFirstPerson: viewModel.pointForFirst, pointForSecondPerson: viewModel.pointForSecond)
+            VStack(spacing: 0) {
+                Spacer()
+                    .frame(height: 5)
+                
+                flyerList
+                
+                pointResult(isSecondTurn: viewModel.isSecondTurn, pointForFirstPerson: viewModel.pointForFirst, pointForSecondPerson: viewModel.pointForSecond)
+            }
         }
     }
 }
@@ -116,7 +124,7 @@ extension FlyerListView {
             
             Text(showText)
                 .font(.title)
-                .foregroundColor(isSecondTurn ? Color.red : Color.white)
+                .foregroundColor(isSecondTurn ? Color.pink : Color.white)
                 .frame(width: screen.width * 0.25, height: screen.height * 0.03)
             
             Spacer()
@@ -126,7 +134,7 @@ extension FlyerListView {
                 .font(.title)
         }
         .frame(width: screen.width * 0.4, height: screen.height * 0.1)
-        .background(isSecondTurn ? Color.clear : Color.red)
+        .background(isSecondTurn ? Color.clear : Color.pink)
     }
 }
 

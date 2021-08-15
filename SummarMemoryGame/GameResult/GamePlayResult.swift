@@ -41,7 +41,7 @@ struct GamePlayResult: View {
                     }
                     
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 90)
                     
                     Button(action: {
                         self.isShowing.toggle()
@@ -74,7 +74,8 @@ struct GamePlayResult: View {
                             .clipShape(RoundedRectangle(cornerRadius: 30))
                     }
                     
-                    Spacer().frame(height: 180)
+                    Spacer()
+                        .frame(height: 60)
                     
                 }
                 
