@@ -17,14 +17,12 @@ struct TopView: View {
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
                 VStack{
-                    Spacer().frame(height: 300)
 
 /*                        Text("Memory Game")
                         .bold()
                         .font(.custom("Times-Roman", size: 50))*/
                     
                     Spacer()
-                        .frame(height: 200)
                     
                     NavigationLink(
                         destination: FlyerListView()){
@@ -54,6 +52,9 @@ struct TopView: View {
                                 .foregroundColor(Color.white)
                                 .clipShape(RoundedRectangle(cornerRadius: 30))
                     }
+                    
+                    Spacer()
+                        .frame(height: 100)
                 }
             }
         }.navigationBarHidden(true)
