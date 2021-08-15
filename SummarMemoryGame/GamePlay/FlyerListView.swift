@@ -82,7 +82,7 @@ extension FlyerListView {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 70, height: 100)
-//                                            .border(Color.green)
+                                            .border(Color.blue)
                                     }
                                 }
                             }
@@ -92,8 +92,8 @@ extension FlyerListView {
                 }
                 .frame(width: screen.width * 0.9, height: screen.height * 0.8)
                 .alert(isPresented: $viewModel.result) {
-                    Alert(title: Text("結果"),
-                          message: Text(viewModel.alertText),
+                    Alert(title: Text(viewModel.alertText),
+                          message: Text(""),
                           dismissButton: .default(Text("OK"),
                                                   action: {
                                                     print("OKがタップされた")
@@ -108,20 +108,20 @@ extension FlyerListView {
     
     private func pointResult(isSecondTurn: Bool, pointForFirstPerson: Int, pointForSecondPerson: Int) -> some View {
         HStack(spacing: 0) {
-            point(isSecondTurn: isSecondTurn, point: pointForFirstPerson)
+            point(isSecondTurn: isSecondTurn, point: pointForFirstPerson, showText: "先攻")
             
             Spacer()
             
-            point(isSecondTurn: !isSecondTurn, point: pointForSecondPerson)
+            point(isSecondTurn: !isSecondTurn, point: pointForSecondPerson, showText: "後攻")
         }
         .frame(width: screen.width * 0.9, height: screen.height * 0.1)
     }
     
-    private func point(isSecondTurn: Bool, point: Int) -> some View {
+    private func point(isSecondTurn: Bool, point: Int, showText: String) -> some View {
         VStack(spacing: 0) {
-            Image(systemName: "person.fill")
-                .resizable()
-                .scaledToFit()
+            
+            Text(showText)
+                .font(.title)
                 .foregroundColor(isSecondTurn ? Color.red : Color.white)
                 .frame(width: screen.width * 0.25, height: screen.height * 0.03)
             

@@ -73,7 +73,7 @@ class FlyerListViewModel: ObservableObject {
 
             // 同じカードだった場合
             if selectedImageList[0] == selectedImageList[1] {
-                alertText = "同じチラシです！"
+                alertText = "ビンゴ！！"
                 
                 // 得点の増加
                 if !isSecondTurn {
@@ -83,7 +83,7 @@ class FlyerListViewModel: ObservableObject {
                 }
             } else {
                 // 異なるカードだった場合
-                alertText = "違うチラシです..."
+                alertText = "ざんねん..."
             }
         }
 
