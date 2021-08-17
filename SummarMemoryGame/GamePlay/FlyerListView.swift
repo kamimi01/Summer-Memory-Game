@@ -46,6 +46,9 @@ struct FlyerListView: View {
                 
                 flyerList
                 
+                Spacer()
+                    .frame(height: 10)
+                
                 pointResult(isSecondTurn: viewModel.isSecondTurn, pointForFirstPerson: viewModel.pointForFirst, pointForSecondPerson: viewModel.pointForSecond)
             }
         }
@@ -90,7 +93,7 @@ extension FlyerListView {
                     }
                 }
             }
-            .frame(width: screen.width * 0.9, height: screen.height * 0.8)
+            .frame(width: screen.width * 0.9, height: screen.height * 0.78)
             .alert(isPresented: $viewModel.result) {
                 Alert(title: Text(viewModel.alertText),
                       message: Text(""),
@@ -122,13 +125,13 @@ extension FlyerListView {
     private func point(isSecondTurn: Bool, point: Int, showText: String) -> some View {
         VStack(spacing: 0) {
             
+            Spacer()
+                .frame(height: 5)
+            
             Text(showText)
                 .font(.title)
                 .foregroundColor(isSecondTurn ? Color.pink : Color.white)
                 .frame(width: screen.width * 0.25, height: screen.height * 0.03)
-            
-            Spacer()
-                .frame(height: 5)
             
             Text(String(describing: point))
                 .font(.title)
