@@ -20,6 +20,7 @@
 		D42F837A26C7BAEA00F8BF20 /* FlyerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */; };
 		D44A9EFB26CCC6DF00C25FDB /* AccountInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */; };
 		D44A9F0626CCCA6000C25FDB /* AboutThisAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */; };
+		D4A9360026D0BDE100B928EC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A935FF26D0BDE100B928EC /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerListViewModel.swift; sourceTree = "<group>"; };
 		D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoListView.swift; sourceTree = "<group>"; };
 		D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppView.swift; sourceTree = "<group>"; };
+		D4A935FF26D0BDE100B928EC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */,
 				D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */,
+				D4A935FF26D0BDE100B928EC /* WebView.swift */,
 			);
 			path = AccountInfo;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				012AA7E626C7B8F3007AA7ED /* TopViewCollection.swift in Sources */,
+				D4A9360026D0BDE100B928EC /* WebView.swift in Sources */,
 				D42F832C26C77EC700F8BF20 /* ContentView.swift in Sources */,
 				D42F836126C78A6D00F8BF20 /* TopView.swift in Sources */,
 				D44A9F0626CCCA6000C25FDB /* AboutThisAppView.swift in Sources */,

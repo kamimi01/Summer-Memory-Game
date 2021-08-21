@@ -34,7 +34,7 @@ extension AccountInfoListView {
                     .frame(height: 80)
                 
                 NavigationLink(destination: AboutThisAppView()) {
-                    listCell(title: "このアプリについて")
+                    listCell(title: "利用規約・プライバシーポリシー")
                 }
                 
                 Spacer()
@@ -51,7 +51,7 @@ extension AccountInfoListView {
                 .frame(width: 20)
             
             Text(title)
-                .font(.title2)
+                .font(.title3)
                 .foregroundColor(Color.black)
             
             Spacer()

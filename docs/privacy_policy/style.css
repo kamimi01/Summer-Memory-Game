@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.under {
+  background: linear-gradient(transparent 50%, #4fc3f7 50%);
+}
+
+.page-footer {
+  padding-top: 0;
+}

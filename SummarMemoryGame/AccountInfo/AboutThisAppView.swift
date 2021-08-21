@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutThisAppView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        WebView(loadUrl: "https://kamimi01.github.io/Summer-Memory-Game/privacy_policy/ja.html")
     }
 }
 
