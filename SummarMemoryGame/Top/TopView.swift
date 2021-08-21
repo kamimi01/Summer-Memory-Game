@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TopView: View {
+    @State private var shownAccountInfoView = false
+    
     var body: some View {
         NavigationView {
             
@@ -16,11 +18,33 @@ struct TopView: View {
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
-                VStack{
+                VStack(spacing: 0){
 
 /*                        Text("Memory Game")
                         .bold()
                         .font(.custom("Times-Roman", size: 50))*/
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    HStack(spacing: 0) {
+                        Spacer()
+                        
+                        Button(action: {
+                            shownAccountInfoView.toggle()
+                        }) {
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.blue)
+                        }
+                        .frame(width: 30, height: 30)
+                        .sheet(isPresented: $shownAccountInfoView) {
+                            AccountInfoListView()
+                        }
+                        
+                        Spacer()
+                            .frame(width: 20)
+                    }
                     
                     Spacer()
                     
