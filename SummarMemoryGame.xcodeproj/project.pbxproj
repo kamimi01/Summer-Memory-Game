@@ -18,6 +18,8 @@
 		D42F836926C78A7A00F8BF20 /* FlyerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F836826C78A7A00F8BF20 /* FlyerListView.swift */; };
 		D42F836E26C78A8400F8BF20 /* GamePlayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F836D26C78A8400F8BF20 /* GamePlayResult.swift */; };
 		D42F837A26C7BAEA00F8BF20 /* FlyerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */; };
+		D44A9EFB26CCC6DF00C25FDB /* AccountInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */; };
+		D44A9F0626CCCA6000C25FDB /* AboutThisAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		D42F836826C78A7A00F8BF20 /* FlyerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerListView.swift; sourceTree = "<group>"; };
 		D42F836D26C78A8400F8BF20 /* GamePlayResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayResult.swift; sourceTree = "<group>"; };
 		D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerListViewModel.swift; sourceTree = "<group>"; };
+		D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoListView.swift; sourceTree = "<group>"; };
+		D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		D42F832826C77EC700F8BF20 /* SummarMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				D44A9EF926CCC6B200C25FDB /* AccountInfo */,
 				D42F835F26C78A5600F8BF20 /* GameResult */,
 				D42F835E26C78A3C00F8BF20 /* GamePlay */,
 				D42F835D26C78A2B00F8BF20 /* Top */,
@@ -175,6 +180,15 @@
 				D42F837926C7BAEA00F8BF20 /* FlyerListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D44A9EF926CCC6B200C25FDB /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D44A9EFA26CCC6DF00C25FDB /* AccountInfoListView.swift */,
+				D44A9F0526CCCA6000C25FDB /* AboutThisAppView.swift */,
+			);
+			path = AccountInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +323,9 @@
 				012AA7E626C7B8F3007AA7ED /* TopViewCollection.swift in Sources */,
 				D42F832C26C77EC700F8BF20 /* ContentView.swift in Sources */,
 				D42F836126C78A6D00F8BF20 /* TopView.swift in Sources */,
+				D44A9F0626CCCA6000C25FDB /* AboutThisAppView.swift in Sources */,
 				D42F836E26C78A8400F8BF20 /* GamePlayResult.swift in Sources */,
+				D44A9EFB26CCC6DF00C25FDB /* AccountInfoListView.swift in Sources */,
 				D42F832A26C77EC700F8BF20 /* SummarMemoryGameApp.swift in Sources */,
 				D42F836926C78A7A00F8BF20 /* FlyerListView.swift in Sources */,
 				D42F837A26C7BAEA00F8BF20 /* FlyerListViewModel.swift in Sources */,
